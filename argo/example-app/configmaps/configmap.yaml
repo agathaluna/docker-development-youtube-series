@@ -7,6 +7,7 @@ data:
     {
       "environment" : "dev",
       "type": "test",
-      "oie": "olar"
+      "oie": "olar",
+      "qualquer coisa": "oi"
     }
 # kubectl create configmap example-config --from-file ./golang/configs/config.json
