@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: example-config
+  name: example-config-test
 data:
   config.json: |
     {
-      "environment" : "dev"
+      "environment" : "dev",
+      "type": "test"
     }
 # kubectl create configmap example-config --from-file ./golang/configs/config.json
