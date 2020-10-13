@@ -1,7 +1,7 @@
-apiVersion: apps/v1
+apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: example-deploy
+  name: example-app
   labels:
     app: example-app
   annotations:
@@ -10,6 +10,7 @@ spec:
     matchLabels:
       app: example-app
   replicas: 6
+  revisionHistoryLimit: 1
   template:
     metadata:
       labels:
@@ -42,6 +43,6 @@ spec:
           name: example-config #name of our configmap object
   strategy:
     blueGreen:
-      activeService: example-service-active
+      activeService: example-service
       previewService: example-service-preview
       autoPromotionEnabled: false        
